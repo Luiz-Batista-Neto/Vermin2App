@@ -1,0 +1,4 @@
+const infos = {
+    nome: 'INFORMAÇÕES GERAIS SOBRE OS SKAVEN',
+    descricao: 'Os Skaven, (pronuncia-se SKAY-ven) às vezes conhecidos como os homens-rato, os Ratkin, os Filhos do Rato Chifrudo, ou os Inferiores são uma raça malévola e diabólica de grandes e inteligentes , ratos humanóides que habitam um enorme império subterrâneo, intercontinental, conhecido em sua língua simplesmente como Sub-Império. No coração de Skavendom fica a horrível cidade de Skavenblight, a capital dos homens-rato e o provável local de nascimento da raça Skaven.Os Skaven como um todo são uma espécie cruel, traiçoeira e altamente numerosa que, desde então, espalhou sua repugnante corrupção pelos cantos mais distantes do Mundo Conhecido. Das profundezas da terra, estes necrófagos construíram um vasto império, cujo poder militar e números incompreensíveis têm o potencial de sufocar os reinos humanos do Velho Mundo numa maré fervente de violência e anarquia.'
+};
