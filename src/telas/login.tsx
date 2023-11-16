@@ -16,8 +16,8 @@ import {
 } from 'react-native';
 
 // Imagens
-import bg from './assets/imagens/outros/bg.png'
-import logo from './assets/imagens/outros/logo.png'
+import bg from './../assets/imagens/outros/login-e-cadastro/bg.jpg'
+import logo from '../../assets/imagens/outros/login e cadastro/logo.png'
 
 export interface LoginScreenProps {
 }
@@ -46,9 +46,10 @@ export function LoginScreen(props: LoginScreenProps) {
             onSubmit={handleLogin}>
             {({errors, touched, handleBlur, handleChange, handleSubmit, isSubmitting}) => (
                 <>
-                    <Text>Login</Text>
+                    <Text style={{color: "gold", fontSize: 50, fontStyle: 'italic', textShadowColor: "green"}}>Login</Text>
                     <TextInput  placeholder='Digite seu email' onBlur={handleBlur('email')} style={styles.inputContainer} onChangeText={handleChange('email')}/>
                     { errors.email && touched.email && <Text style={styles.fail}></Text>}
+                    <Text style={{color: "gold", fontSize: 50, fontStyle: 'italic', textShadowColor: "green"}}>Senha</Text>
                     <TextInput  placeholder='Digite sua senha' onBlur={handleBlur('email')} style={styles.inputContainer} onChangeText={handleChange('senha')} secureTextEntry/>
                     { errors.senha && touched.senha && <Text style={styles.fail}></Text>}
                     <Button title="Logar" onPress={() => handleSubmit()} disabled={isSubmitting} />
@@ -74,7 +75,7 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       textDecorationLine: 'underline'
     },
-    background: { width: '100%', height: '100%' },
+    background: { width: '100%', height: '100%', flex: 1 },
     container: {
       flex: 1,
       justifyContent: 'center',
@@ -86,9 +87,9 @@ const styles = StyleSheet.create({
       borderBottomRightRadius: 40,
       borderStyle: 'dotted',
       borderColor: 'gold',
-      color: 'gold',
+      color: "gold",
       paddingLeft: 10,
-      marginBottom: -15
+      marginBottom: 15
     },
     btn: {
       borderRadius: 0,

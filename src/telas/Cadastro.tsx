@@ -5,6 +5,9 @@ import { Formik, FormikHelpers, FormikValues } from 'formik';
 import { Input } from '@rneui/themed';
 import { useState } from 'react';
 
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 import { 
   Button, 
   ImageBackground, 
@@ -15,7 +18,7 @@ import {
 } from 'react-native';
 
 // Imagens
-import bg from '../assets/imagens/outros/bgCadastro.png'
+import bg from '../assets/imagens/outros/login-e-cadastro/bgCadastro.png'
 
 export interface CadastroScreenProps {
 }
@@ -54,7 +57,7 @@ export function CadastroScreen(props: CadastroScreenProps){
             onBlur={handleBlur('nome')} 
             style={styles.textInput} 
             onChangeText={handleChange('nome')}/>
-            { errors.email && touched.email && <Text style={styles.fail}>{errors.nome}</Text>}
+            { errors.nome && touched.nome && <Text style={styles.fail}>{""+errors.nome}</Text>}
 
            {/* EMAIL */}
           <Text style={{color: 'gold', fontSize: 30,}}>Email</Text>
@@ -63,7 +66,7 @@ export function CadastroScreen(props: CadastroScreenProps){
             onBlur={handleBlur('email')} 
             style={styles.textInput} 
             onChangeText={handleChange('email')}/>
-            { errors.email && touched.email && <Text style={styles.fail}>{errors.email}</Text>}
+            { errors.email && touched.email && <Text style={styles.fail}>{""+errors.email}</Text>}
 
            {/* SENHA */}
            <Text style={{color: 'gold', fontSize: 30,}}>Senha</Text>
@@ -72,7 +75,7 @@ export function CadastroScreen(props: CadastroScreenProps){
               onBlur={handleBlur('email')} 
               style={styles.textInput} 
               onChangeText={handleChange('senha')} secureTextEntry/>
-            { errors.senha && touched.senha && <Text style={styles.fail}>{errors.senha}</Text>}
+            { errors.senha && touched.senha && <Text style={styles.fail}>{""+errors.senha}</Text>}
 
            {/* URL DA STEAM */}
            <Text style={{color: 'gold', fontSize: 30,}}>Url da steam</Text>
@@ -81,7 +84,7 @@ export function CadastroScreen(props: CadastroScreenProps){
               onBlur={handleBlur('email')} 
               style={styles.textInput} 
               onChangeText={handleChange('senha')} secureTextEntry/>
-            { errors.senha && touched.senha && <Text style={styles.fail}>{errors.url}</Text>}
+            { errors.senha && touched.senha && <Text style={styles.fail}>{""+errors.url}</Text>}
 
             <Button title="Cadastrar" onPress={() => handleSubmit()} disabled={isSubmitting} />
 
