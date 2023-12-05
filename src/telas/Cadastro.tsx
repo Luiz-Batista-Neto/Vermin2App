@@ -86,7 +86,8 @@ export function CadastroScreen(props: CadastroScreenProps){
               onChangeText={handleChange('senha')} secureTextEntry/>
             { errors.senha && touched.senha && <Text style={styles.fail}>{""+errors.url}</Text>}
 
-            <Button title="Cadastrar" onPress={() => handleSubmit()} disabled={isSubmitting} />
+            <Button title="Cadastrar" onPress={() =>
+               handleSubmit()} disabled={isSubmitting} />
 
             { logCadastro == 'Cadastro feito com sucesso' && <Text style={styles.success}>Cadastrado com sucesso</Text>}
             { logCadastro == 'Cadastro falhou' && <Text style={styles.fail}>Alguns campos podem conter erros</Text>}

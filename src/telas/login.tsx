@@ -17,19 +17,20 @@ import {
 
 // Imagens
 import bg from './../assets/imagens/outros/login-e-cadastro/bg.jpg'
-import logo from '../../assets/imagens/outros/login e cadastro/logo.png'
+import { useNavigation } from '@react-navigation/native';
 
 export interface LoginScreenProps {
 }
 
 export function LoginScreen(props: LoginScreenProps) {
 
-  const [ result, setResult ] = useState<null|'success login'|'failed login'>(null);
+    const [ result, setResult ] = useState<null|'success login'|'failed login'>(null);
+  const navigation = useNavigation<any>();
 
   const handleLogin = async ({email,senha}: any) => {
     await new Promise(resolve => setTimeout(resolve, 1000))
-    if (email.trim() == 'teste@teste.com' && senha.trim() == '12345')
-      setResult('success login')
+    if (email.trim() == 'teste@teste.com' && senha.trim() == '123456')
+      navigation.navigate("app");
     else
       setResult('failed login')
   }
