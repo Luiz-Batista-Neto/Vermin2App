@@ -1,10 +1,10 @@
 import React from 'react';
 import * as Yup from 'yup';
 
-import { Input } from "@rneui/themed";
 import { Button } from '@rneui/base';
 import { useState } from 'react';
 import { Formik} from 'formik';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
 // React Native
 import {
@@ -24,7 +24,7 @@ export interface LoginScreenProps {
 
 export function LoginScreen(props: LoginScreenProps) {
 
-    const [ result, setResult ] = useState<null|'success login'|'failed login'>(null);
+  const [ result, setResult ] = useState<null|'success login'|'failed login'>(null);
   const navigation = useNavigation<any>();
 
   const handleLogin = async ({email,senha}: any) => {
@@ -36,9 +36,10 @@ export function LoginScreen(props: LoginScreenProps) {
   }
 
   return (
+    
     <ImageBackground source={bg} style={styles.background}>
     <View style={styles.container}>
-        <Formik 
+        <Formik
             initialValues={{email: '', senha: ''}}
             validationSchema={Yup.object().shape({
             email: Yup.string().required('Informe o email').email('E-mail não válido'),
